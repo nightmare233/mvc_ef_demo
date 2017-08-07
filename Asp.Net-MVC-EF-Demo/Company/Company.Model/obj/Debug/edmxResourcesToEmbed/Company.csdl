@@ -11,5 +11,14 @@
   </EntityType>
   <EntityContainer Name="CompanyEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Staff" EntityType="Self.Staff" />
+    <EntitySet Name="Department" EntityType="CompanyModel.Department" />
   </EntityContainer>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

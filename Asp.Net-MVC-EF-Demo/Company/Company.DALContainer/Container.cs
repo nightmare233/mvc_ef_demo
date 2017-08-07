@@ -46,6 +46,7 @@ namespace Company.DALContainer
             var builder = new ContainerBuilder();
             //格式：builder.RegisterType<xxxx>().As<Ixxxx>().InstancePerLifetimeScope();
             builder.RegisterType<StaffDAL>().As<IStaffDAL>().InstancePerLifetimeScope();
+            builder.RegisterType<DepartmentDAL>().As<IDepartmentDAL>().InstancePerLifetimeScope();
             container = builder.Build();
         }
     }

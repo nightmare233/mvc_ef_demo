@@ -1,0 +1,56 @@
+﻿@using Company.Model
+@model List<Company.Model.Department>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Deparment Manage Page</h1>
+        <table border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            @foreach (Department dept in Model)
+            {
+                  <tr>
+                      <td>@dept.Id</td>
+                      <td>@dept.Name</td>
+                      <td>@dept.Description</td>
+                  </tr>
+            }
+        </table>
+        <hr />
+        <h1>Insert</h1>
+        <form action="@Url.Action("Add","Department")"  method="post">
+            Name:<input  name="Name"/>
+            Description:<input  name="Description"/>
+            <button type="submit">Submit Insert</button>
+        </form>
+        <hr />
+        <h1>Update</h1>
+        <form action="@Url.Action("Update","Department")" method="post">
+            ID:<input  name="ID"/>
+            Name:<input  name="Name"/>
+            Description:<input  name="Description"/>
+            <button type="submit">Update Submit</button>
+        </form>
+        <hr />
+        <h1>Delete</h1>
+        <form action="@Url.Action("Delete","Department")" method="post">
+            ID:<input  name="ID"/>
+            <button type="submit">Delete Submit</button>
+        </form>
+    </div>
+</body>
+</html>

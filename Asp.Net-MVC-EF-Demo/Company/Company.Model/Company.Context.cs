@@ -26,5 +26,6 @@ namespace Company.Model
         }
     
         public virtual DbSet<Staff> Staff { get; set; }
+        public virtual DbSet<Department> Department { get; set; }
     }
 }
